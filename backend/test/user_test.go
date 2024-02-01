@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/NamChoco/sa-66-example/entity"
+	"github.com/nannamind/sa-66-example/entity"
 	"github.com/asaskevich/govalidator"
 	. "github.com/onsi/gomega"
 )
@@ -15,9 +15,9 @@ func TestData(t *testing.T) {
 
 	t.Run(`Username is true`, func(t *testing.T) {
 		user := entity.Member{
-			Username: "nam", 
+			Username: "n", 
 			Password: "123456",
-			Email: "nam@gmail.com",
+			Email: "n@gmail.com",
 		}
 
 		ok, err := govalidator.ValidateStruct(user)
@@ -36,7 +36,7 @@ func TestMember(t *testing.T) {
 		user := entity.Member{
 			Username: "", //ผิด
 			Password: "123456",
-			Email: "nam@gmail.com",
+			Email: "n@gmail.com",
 		}
 
 		ok, err := govalidator.ValidateStruct(user)
@@ -54,9 +54,9 @@ func TestEmail(t *testing.T) {
 
 	t.Run(`Email is invalid`, func(t *testing.T) {
 		user := entity.Member{
-			Username: "nam",
+			Username: "n",
 			Password: "123456",
-			Email: "namThanawat", //ผิด
+			Email: "nnn", //ผิด
 		}
 
 		ok, err := govalidator.ValidateStruct(user)
